@@ -13,4 +13,12 @@ const saveOrder = (req, resp) => {
     });
 }
 
-module.exports = {saveOrder}
+const getAllOrders = (req, resp) => {
+    Order.find().then(response => {
+        resp.status(200).json({state: false, data: response});
+    }).catch(error => {
+        resp.status(500).json({state: false, message: 'Try Again'});
+    })
+}
+
+module.exports = {saveOrder, getAllOrders}

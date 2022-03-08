@@ -5,6 +5,7 @@ const cors = require('cors')
 const bodyParser = require('body-parser')
 
 const CustomerRoute = require('./route/CustomerRoute');
+const ItemRoute = require('./route/ItemRoute');
 const OrderRoute = require('./route/OrderRoute');
 const UserRoute = require('./route/UserRoute');
 
@@ -29,5 +30,6 @@ mongoose.connect(
 })
 
 app.use('/api/v1/customer', CustomerRoute);
+app.use('/api/v1/item', ItemRoute);
 app.use('/api/v1/order', OrderRoute);
 app.use('/api/v1/user', UserRoute);
